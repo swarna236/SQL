@@ -4,6 +4,14 @@
 select t1.columns, t2.columns
 from table1 as t1 join table2 as t2 on t1.id = t2.id
 
+/* multiple tables */
+
+select e.name, d.name  dept_name, pr.title project_title
+from employees as e
+join departments as d on e.department_id = d.id
+join employees_projects as p on e.id = p.employee_id 
+join projects as pr on pr.id = p.project_id ;
+
 /* inner join*/
 
 /* full outer join */
