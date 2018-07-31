@@ -26,3 +26,7 @@ select * from employees order by salary desc limit 2,1;
 
 select salary from employees e1 where (3-1) = 
 (select count(distinct(salary)) from employees e2 where e2.salary > e1.salary);
+/* sum for 2 groups less than 3000 and greater than 30000*/
+select
+sum(case when salary < 30000 then salary else 0 end) as sum_low ,
+sum(case when salary >= 30000 then salary else 0 end)as sum_high from employees;
