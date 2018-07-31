@@ -19,3 +19,10 @@ join projects as pr on pr.id = p.project_id ;
 /* left join */
 
 /* right join */ 
+
+/* ways to get nth highest value*/ 
+/* getting 3rd highest, skiiping first 2*/
+select * from employees order by salary desc limit 2,1;
+
+select salary from employees e1 where (3-1) = 
+(select count(distinct(salary)) from employees e2 where e2.salary > e1.salary);
